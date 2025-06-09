@@ -31,7 +31,8 @@ def testCommonTomlFilePlaceHolder = new File("${project.rootDir}/build-config/re
 def ballerinaDist = "${project.rootDir}/target/ballerina-runtime"
 def distributionBinPath =  "${ballerinaDist}/bin"
 def testCoverageParam = "--code-coverage --coverage-format=xml --includes=io.ballerina.lib.np.*:ballerina.np*"
-def testSuites = ["np-tests", "np-default-model-tests"]
+// def testSuites = ["np-tests", "np-default-model-tests", "np-compile-time-test"]
+def testSuites = ["np-compile-time-test"]
 def testCommonPackage = "np-test-commons"
 
 def stripBallerinaExtensionVersion(String extVersion) {

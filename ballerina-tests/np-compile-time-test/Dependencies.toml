@@ -95,10 +95,6 @@ dependencies = [
 	{org = "ballerina", name = "time"},
 	{org = "ballerina", name = "url"}
 ]
-modules = [
-	{org = "ballerina", packageName = "http", moduleName = "http"},
-	{org = "ballerina", packageName = "http", moduleName = "http.httpscerr"}
-]
 
 [[package]]
 org = "ballerina"
@@ -159,6 +155,7 @@ dependencies = [
 org = "ballerina"
 name = "lang.error"
 version = "0.0.0"
+scope = "testOnly"
 dependencies = [
 	{org = "ballerina", name = "jballerina.java"}
 ]
@@ -221,9 +218,6 @@ dependencies = [
 	{org = "ballerina", name = "lang.value"},
 	{org = "ballerina", name = "observe"}
 ]
-modules = [
-	{org = "ballerina", packageName = "log", moduleName = "log"}
-]
 
 [[package]]
 org = "ballerina"
@@ -238,15 +232,41 @@ dependencies = [
 
 [[package]]
 org = "ballerina"
-name = "np_test_commons"
+name = "np"
 version = "0.3.1"
 dependencies = [
 	{org = "ballerina", name = "http"},
-	{org = "ballerina", name = "log"},
+	{org = "ballerina", name = "jballerina.java"},
+	{org = "ballerina", name = "url"}
+]
+modules = [
+	{org = "ballerina", packageName = "np", moduleName = "np"}
+]
+
+[[package]]
+org = "ballerina"
+name = "np_test_commons"
+version = "0.3.1"
+scope = "testOnly"
+dependencies = [
+	{org = "ballerina", name = "http"},
 	{org = "ballerina", name = "test"}
 ]
 modules = [
 	{org = "ballerina", packageName = "np_test_commons", moduleName = "np_test_commons"}
+]
+
+[[package]]
+org = "ballerina"
+name = "np_tests"
+version = "0.3.1"
+dependencies = [
+	{org = "ballerina", name = "np"},
+	{org = "ballerina", name = "np_test_commons"},
+	{org = "ballerina", name = "test"}
+]
+modules = [
+	{org = "ballerina", packageName = "np_tests", moduleName = "np_tests"}
 ]
 
 [[package]]
@@ -292,6 +312,7 @@ dependencies = [
 org = "ballerina"
 name = "test"
 version = "0.0.0"
+scope = "testOnly"
 dependencies = [
 	{org = "ballerina", name = "jballerina.java"},
 	{org = "ballerina", name = "lang.array"},

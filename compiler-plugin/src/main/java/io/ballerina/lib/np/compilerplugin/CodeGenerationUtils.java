@@ -52,6 +52,7 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static io.ballerina.lib.np.compilerplugin.Commons.BAL_EXT;
@@ -232,7 +233,7 @@ public class CodeGenerationUtils {
     }
 
     private static GeneratedCode extractGeneratedFunctionCode(Stream<String> lines) {
-        String[] linesArr = lines.toArray(String[]::new);
+        String[] linesArr = lines.collect(Collectors.toList()).toArray(new String[0]);
         int length = linesArr.length;
 
         if (length == 1) {
