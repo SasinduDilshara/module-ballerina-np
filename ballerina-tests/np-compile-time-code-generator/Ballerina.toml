@@ -1,0 +1,4 @@
+[package]
+org = "ballerina"
+name = "np_compile_time_code_generator"
+version = "0.3.1"

@@ -66,6 +66,9 @@ dependencies = [
 	{org = "ballerina", name = "os"},
 	{org = "ballerina", name = "time"}
 ]
+modules = [
+	{org = "ballerina", packageName = "file", moduleName = "file"}
+]
 
 [[package]]
 org = "ballerina"
@@ -94,10 +97,6 @@ dependencies = [
 	{org = "ballerina", name = "observe"},
 	{org = "ballerina", name = "time"},
 	{org = "ballerina", name = "url"}
-]
-modules = [
-	{org = "ballerina", packageName = "http", moduleName = "http"},
-	{org = "ballerina", packageName = "http", moduleName = "http.httpscerr"}
 ]
 
 [[package]]
@@ -159,6 +158,7 @@ dependencies = [
 org = "ballerina"
 name = "lang.error"
 version = "0.0.0"
+scope = "testOnly"
 dependencies = [
 	{org = "ballerina", name = "jballerina.java"}
 ]
@@ -235,10 +235,40 @@ dependencies = [
 
 [[package]]
 org = "ballerina"
-name = "np_test_commons"
+name = "np"
 version = "0.3.1"
 dependencies = [
 	{org = "ballerina", name = "http"},
+	{org = "ballerina", name = "jballerina.java"},
+	{org = "ballerina", name = "url"}
+]
+modules = [
+	{org = "ballerina", packageName = "np", moduleName = "np"}
+]
+
+[[package]]
+org = "ballerina"
+name = "np_compile_time_test"
+version = "0.3.1"
+dependencies = [
+	{org = "ballerina", name = "file"},
+	{org = "ballerina", name = "np"},
+	{org = "ballerina", name = "np_test_commons"},
+	{org = "ballerina", name = "test"}
+]
+modules = [
+	{org = "ballerina", packageName = "np_compile_time_test", moduleName = "np_compile_time_test"}
+]
+
+[[package]]
+org = "ballerina"
+name = "np_test_commons"
+version = "0.3.1"
+scope = "testOnly"
+dependencies = [
+	{org = "ballerina", name = "http"},
+	{org = "ballerina", name = "io"},
+	{org = "ballerina", name = "log"},
 	{org = "ballerina", name = "test"}
 ]
 modules = [
@@ -278,16 +308,18 @@ dependencies = [
 [[package]]
 org = "ballerina"
 name = "task"
-version = "2.7.0"
+version = "2.10.0"
 dependencies = [
 	{org = "ballerina", name = "jballerina.java"},
-	{org = "ballerina", name = "time"}
+	{org = "ballerina", name = "time"},
+	{org = "ballerina", name = "uuid"}
 ]
 
 [[package]]
 org = "ballerina"
 name = "test"
 version = "0.0.0"
+scope = "testOnly"
 dependencies = [
 	{org = "ballerina", name = "jballerina.java"},
 	{org = "ballerina", name = "lang.array"},
@@ -311,5 +343,16 @@ name = "url"
 version = "2.6.0"
 dependencies = [
 	{org = "ballerina", name = "jballerina.java"}
+]
+
+[[package]]
+org = "ballerina"
+name = "uuid"
+version = "1.10.0"
+dependencies = [
+	{org = "ballerina", name = "crypto"},
+	{org = "ballerina", name = "jballerina.java"},
+	{org = "ballerina", name = "lang.int"},
+	{org = "ballerina", name = "time"}
 ]
 
